@@ -11,7 +11,7 @@
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-latin-wght.woff2" crossorigin>
     <link rel="icon" type="image/svg+xml" href="/assets/logo.png">
     <link rel="stylesheet" href="/assets/pico.min.css">
-    <link rel="stylesheet" href="/assets/site.css?v=16">
+    <link rel="stylesheet" href="/assets/site.css?v=19">
     <link rel="stylesheet" href="/assets/learns.css">
     <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
     <meta name="htmx-config" content='{"allowEval":false,"allowScriptTags":false,"selfRequestsOnly":true,"includeIndicatorStyles":false}'>
@@ -46,12 +46,15 @@
                 <a class="d-content-h" href="https://radova.org/about/" role="menuitem" data-i18n="nav.about">About</a>
                 <a class="d-content-r" href="https://radova.org/about/history" role="menuitem" data-i18n="nav.history">History</a>
                 <a class="d-content-c" href="https://radova.org/about/contact" role="menuitem" data-i18n="nav.contact">Contact</a>
-                <button type="button" class="d-content-back" role="menuitem" data-i18n="nav.back">Back</button>
               </div>
             </li>
           </ul>
         </nav>
       </div>
+
+      <button type="button" id="theme-toggle" class="btn-theme" data-set-theme="light" hx-get="/assets/theme-dark.html" hx-target="#theme-toggle" hx-swap="outerHTML" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+        <svg width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M216.7 152.6A91.9 91.9 0 0 1 103.4 39.3a92 92 0 1 0 113.3 113.3Z"/></svg>
+      </button>
 
       <button type="button" id="lang-toggle" class="btn-lang" aria-label="Switch language to Indonesian">EN</button>
 
@@ -73,13 +76,12 @@
         <!-- Editorial Header -->
         <header class="editorial-header">
           <div>
-            <p class="eyebrow">[Radova Academy & Docs]</p>
-            <h1>Master Radova Linux</h1>
+            <p class="eyebrow" data-id="[Akademi & Dokumentasi Radova]">[Radova Academy & Docs]</p>
+            <h1 data-id="Kuasai Radova Linux">Master Radova Linux</h1>
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+          <p data-id="Dokumentasi teknis, kursus rekayasa terstruktur, bootcamp kohort, dan sertifikasi standar industri.">Technical documentation, structured engineering courses, cohort bootcamps, and industry-grade certifications.</p>
         </header>
 
-        <!-- Anchor Navigation Tabs -->
         <!-- Tab Navigation Bar -->
         <nav class="tab-grid tab-grid--four" aria-label="Learning sections">
           <ul role="tablist">
@@ -93,7 +95,8 @@
                 aria-controls="panel-tutorial"
                 data-tab="tutorial"
               >
-                <i class="ph ph-book-open-text" aria-hidden="true"></i> Tutorial
+                <i class="ph ph-book-open-text" aria-hidden="true"></i>
+                <span data-id="Tutorial">Tutorial</span>
               </button>
             </li>
             <li role="presentation">
@@ -107,7 +110,8 @@
                 data-tab="course"
                 tabindex="-1"
               >
-                <i class="ph ph-graduation-cap" aria-hidden="true"></i> Course
+                <i class="ph ph-graduation-cap" aria-hidden="true"></i>
+                <span data-id="Kursus">Course</span>
               </button>
             </li>
             <li role="presentation">
@@ -121,7 +125,8 @@
                 data-tab="bootcamp"
                 tabindex="-1"
               >
-                <i class="ph ph-chalkboard-teacher" aria-hidden="true"></i> Bootcamp
+                <i class="ph ph-chalkboard-teacher" aria-hidden="true"></i>
+                <span data-id="Bootcamp">Bootcamp</span>
               </button>
             </li>
             <li role="presentation">
@@ -135,14 +140,15 @@
                 data-tab="certification"
                 tabindex="-1"
               >
-                <i class="ph ph-certificate" aria-hidden="true"></i> Certification
+                <i class="ph ph-certificate" aria-hidden="true"></i>
+                <span data-id="Sertifikasi">Certification</span>
               </button>
             </li>
           </ul>
         </nav>
 
         <!-- =====================================================================
-             PANEL 1: TUTORIAL (Dokumentasi Gaya Arch Wiki)
+             PANEL 1: TUTORIAL
              ===================================================================== -->
         <section
           id="panel-tutorial"
@@ -152,59 +158,59 @@
         >
           <div class="section-banner">
             <div>
-              <p class="eyebrow">01 // DOCUMENTATION INDEX</p>
-              <h2 id="heading-tutorial">Tutorial &amp; System Wiki</h2>
+              <p class="eyebrow" data-id="01 // INDEKS DOKUMENTASI">01 // DOCUMENTATION INDEX</p>
+              <h2 id="heading-tutorial" data-id="Tutorial & Wiki Sistem">Tutorial & System Wiki</h2>
             </div>
             <a class="button button--outline-navy" target="_blank" rel="noopener" href="https://wiki.radova.org">
-              Open Full Wiki <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+              <span data-id="Buka Wiki Lengkap">Open Full Wiki</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
             </a>
           </div>
 
           <div class="wiki-board">
             <article class="wiki-cell">
-              <h3><i class="ph ph-download-simple" aria-hidden="true"></i> Installation &amp; Boot</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+              <h3><i class="ph ph-download-simple" aria-hidden="true"></i> <span data-id="Instalasi & Boot">Installation & Boot</span></h3>
+              <p data-id="Panduan pemasangan sistem dasar, partisi UEFI/BIOS, dan konfigurasi bootloader.">Base system installation guide, UEFI/BIOS partitioning, and bootloader configuration.</p>
               <ul class="wiki-links">
-                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/installation-guide">Lorem ipsum dolor sit</a></li>
-                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/partitioning">Consectetur adipiscing elit sed</a></li>
-                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/post-install">Tempor incididunt ut labore</a></li>
+                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/installation-guide" data-id="Panduan Instalasi (x86_64)">Installation Guide (x86_64)</a></li>
+                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/partitioning" data-id="Partisi Disk & Enkripsi LUKS">Disk Partitioning & LUKS Encryption</a></li>
+                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/post-install" data-id="Daftar Periksa Pasca-Instalasi">Post-Installation Checklist</a></li>
               </ul>
             </article>
 
             <article class="wiki-cell">
-              <h3><i class="ph ph-package" aria-hidden="true"></i> Package Management</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+              <h3><i class="ph ph-package" aria-hidden="true"></i> <span data-id="Manajemen Paket">Package Management</span></h3>
+              <p data-id="Penggunaan <code>packer</code>, sinkronisasi repositori, serta manajemen dependensi sistem.">Using <code>packer</code>, repository synchronization, and system dependency management.</p>
               <ul class="wiki-links">
-                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/packer">Lorem ipsum dolor sit</a></li>
-                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/repositories">Consectetur adipiscing elit sed</a></li>
-                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/build-packages">Tempor incididunt ut labore</a></li>
+                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/packer" data-id="Referensi CLI Packer">Packer CLI Reference</a></li>
+                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/repositories" data-id="Mirror Resmi & Komunitas">Official & Community Mirrors</a></li>
+                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/build-packages" data-id="Membangun PKGBUILD Kustom">Building Custom PKGBUILDs</a></li>
               </ul>
             </article>
 
             <article class="wiki-cell">
-              <h3><i class="ph ph-sliders-horizontal" aria-hidden="true"></i> System Administration</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+              <h3><i class="ph ph-sliders-horizontal" aria-hidden="true"></i> <span data-id="Administrasi Sistem">System Administration</span></h3>
+              <p data-id="Manajemen layanan init, jaringan, firewall, dan optimalisasi performa kernel.">Init service management, networking, firewall, and kernel performance optimization.</p>
               <ul class="wiki-links">
-                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/init-services">Lorem ipsum dolor sit</a></li>
-                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/networking">Consectetur adipiscing elit sed</a></li>
-                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/kernel-tuning">Tempor incididunt ut labore</a></li>
+                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/init-services" data-id="Kontrol Layanan & Daemon">Service & Daemon Control</a></li>
+                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/networking" data-id="Konfigurasi Jaringan & WireGuard">Network Configuration & WireGuard</a></li>
+                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/kernel-tuning" data-id="Parameter Kernel & Sysctl">Kernel Parameters & Sysctl</a></li>
               </ul>
             </article>
 
             <article class="wiki-cell">
-              <h3><i class="ph ph-books" aria-hidden="true"></i> Library &amp; DAM Stack</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+              <h3><i class="ph ph-books" aria-hidden="true"></i> <span data-id="Tumpukan Perpustakaan & DAM">Library & DAM Stack</span></h3>
+              <p data-id="Deployment otomatis platform perpustakaan digital, repositori institusi, dan arsip.">Automated deployment of digital library platforms, institutional repositories, and archives.</p>
               <ul class="wiki-links">
-                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/dam-stack">Lorem ipsum dolor sit</a></li>
-                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/backup-policy">Consectetur adipiscing elit sed</a></li>
-                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/hardening">Tempor incididunt ut labore</a></li>
+                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/dam-stack" data-id="Pengaturan Manajemen Aset Digital">Digital Asset Management Setup</a></li>
+                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/backup-policy" data-id="Snapshot Otomatis & Cadangan Offsite">Automated Snapshot & Offsite Backup</a></li>
+                <li><a target="_blank" rel="noopener" href="https://wiki.radova.org/hardening" data-id="Penguatan Server Zero-Trust">Zero-Trust Server Hardening</a></li>
               </ul>
             </article>
           </div>
         </section>
 
         <!-- =====================================================================
-             PANEL 2: COURSE (Materi-Materi yang Ditawarkan)
+             PANEL 2: COURSE
              ===================================================================== -->
         <section
           id="panel-course"
@@ -215,71 +221,71 @@
         >
           <div class="section-banner">
             <div>
-              <p class="eyebrow">02 // STRUCTURED CURRICULUM</p>
-              <h2 id="heading-course">Self-Paced Courses</h2>
+              <p class="eyebrow" data-id="02 // KURIKULUM TERSTRUKTUR">02 // STRUCTURED CURRICULUM</p>
+              <h2 id="heading-course" data-id="Kursus Mandiri">Self-Paced Courses</h2>
             </div>
-            <p class="section-note">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p class="section-note" data-id="Akses terbuka untuk seluruh pengguna Radova Linux.">Open access for all Radova Linux users.</p>
           </div>
 
           <div class="course-grid">
             <article class="course-card">
               <div class="course-card__top">
-                <span class="badge badge--type">Beginner</span>
-                <span class="meta"><i class="ph ph-clock" aria-hidden="true"></i> Lorem · Ipsum</span>
+                <span class="badge badge--type" data-id="Pemula">Beginner</span>
+                <span class="meta"><i class="ph ph-clock" aria-hidden="true"></i> <span data-id="4 Modul · 3 Jam">4 Modules · 3 Hours</span></span>
               </div>
-              <h3>RDV-101: Radova Linux Fundamentals</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+              <h3 data-id="RDV-101: Dasar-Dasar Radova Linux">RDV-101: Radova Linux Fundamentals</h3>
+              <p data-id="Pengenalan arsitektur sistem Radova, navigasi shell, struktur direktori FHS, dan manajemen paket dasar.">Introduction to Radova system architecture, shell navigation, FHS directory structure, and basic package management.</p>
               <dl class="meta-dl">
-                <dt>Prerequisites</dt>
-                <dd>Lorem ipsum dolor sit</dd>
-                <dt>Lab Environment</dt>
-                <dd>Lorem ipsum</dd>
+                <dt data-id="Prasyarat">Prerequisites</dt>
+                <dd data-id="Pemahaman dasar CLI">Basic CLI familiarity</dd>
+                <dt data-id="Lingkungan Lab">Lab Environment</dt>
+                <dd>QEMU / Live ISO</dd>
               </dl>
               <div class="course-card__footer">
-                <a class="button button--outline-navy" href="#course-rdv101">Start Syllabus <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                <a class="button button--outline-navy" href="#course-rdv101"><span data-id="Mulai Silabus">Start</span> <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
               </div>
             </article>
 
             <article class="course-card">
               <div class="course-card__top">
-                <span class="badge badge--scheduled">Intermediate</span>
-                <span class="meta"><i class="ph ph-clock" aria-hidden="true"></i> Lorem · Ipsum</span>
+                <span class="badge badge--scheduled" data-id="Menengah">Intermediate</span>
+                <span class="meta"><i class="ph ph-clock" aria-hidden="true"></i> <span data-id="6 Modul · 6 Jam">6 Modules · 6 Hours</span></span>
               </div>
-              <h3>RDV-201: Server &amp; Repository Operations</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+              <h3 data-id="RDV-201: Operasi Server & Repositori">RDV-201: Server & Repository Operations</h3>
+              <p data-id="Konfigurasi web server produksi, reverse proxy, otomasi layanan sistem, dan pengelolaan arsip digital skala institusi.">Production web server configuration, reverse proxy, system service automation, and institutional-scale digital archive management.</p>
               <dl class="meta-dl">
-                <dt>Prerequisites</dt>
-                <dd>Lorem ipsum dolor sit</dd>
-                <dt>Lab Environment</dt>
-                <dd>Lorem ipsum</dd>
+                <dt data-id="Prasyarat">Prerequisites</dt>
+                <dd data-id="RDV-101 atau setara">RDV-101 or equivalent</dd>
+                <dt data-id="Lingkungan Lab">Lab Environment</dt>
+                <dd>Headless VM</dd>
               </dl>
               <div class="course-card__footer">
-                <a class="button button--outline-navy" href="#course-rdv201">Start Syllabus <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                <a class="button button--outline-navy" href="#course-rdv201"><span data-id="Mulai Silabus">Start</span> <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
               </div>
             </article>
 
             <article class="course-card">
               <div class="course-card__top">
-                <span class="badge badge--severity-high">Advanced</span>
-                <span class="meta"><i class="ph ph-clock" aria-hidden="true"></i> Lorem · Ipsum</span>
+                <span class="badge badge--severity-high" data-id="Lanjutan">Advanced</span>
+                <span class="meta"><i class="ph ph-clock" aria-hidden="true"></i> <span data-id="5 Modul · 8 Jam">5 Modules · 8 Hours</span></span>
               </div>
-              <h3>RDV-301: Hardening &amp; Custom ISO Engineering</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <code>lorem-ipsum</code>.</p>
+              <h3 data-id="RDV-301: Hardening & Rekayasa ISO Kustom">RDV-301: Hardening & Custom ISO Engineering</h3>
+              <p data-id="Audit keamanan kernel, mandatory access control, dan peracikan image ISO kustom menggunakan pipeline <code>mkarchiso</code>.">Kernel security auditing, mandatory access control, and custom ISO image building using the <code>mkarchiso</code> pipeline.</p>
               <dl class="meta-dl">
-                <dt>Prerequisites</dt>
-                <dd>Lorem ipsum dolor sit</dd>
-                <dt>Lab Environment</dt>
-                <dd>Lorem ipsum</dd>
+                <dt data-id="Prasyarat">Prerequisites</dt>
+                <dd data-id="RDV-201 & Skrip Shell">RDV-201 & Shell Scripting</dd>
+                <dt data-id="Lingkungan Lab">Lab Environment</dt>
+                <dd>Bare-metal / KVM</dd>
               </dl>
               <div class="course-card__footer">
-                <a class="button button--outline-navy" href="#course-rdv301">Start Syllabus <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                <a class="button button--outline-navy" href="#course-rdv301"><span data-id="Mulai Silabus">Start</span> <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
               </div>
             </article>
           </div>
         </section>
 
         <!-- =====================================================================
-             PANEL 3: BOOTCAMP (Papan Informasi & Pendaftaran)
+             PANEL 3: BOOTCAMP
              ===================================================================== -->
         <section
           id="panel-bootcamp"
@@ -290,10 +296,10 @@
         >
           <div class="section-banner">
             <div>
-              <p class="eyebrow">03 // COHORT NOTICE BOARD</p>
-              <h2 id="heading-bootcamp">Intensive Bootcamps</h2>
+              <p class="eyebrow" data-id="03 // PAPAN INFORMASI KOHORT">03 // COHORT NOTICE BOARD</p>
+              <h2 id="heading-bootcamp" data-id="Bootcamp Intensif">Intensive Bootcamps</h2>
             </div>
-            <a class="button" href="#register-bootcamp"><i class="ph ph-pencil-simple-line" aria-hidden="true"></i> Register Bootcamp</a>
+            <a class="button" href="#register-bootcamp"><i class="ph ph-pencil-simple-line" aria-hidden="true"></i> <span data-id="Daftar Bootcamp">Register Bootcamp</span></a>
           </div>
 
           <ol class="post-grid" aria-label="Available bootcamps">
@@ -301,26 +307,23 @@
               <article class="post-row">
                 <div class="post-row__main">
                   <p class="post-row__kicker">
-                    <span class="badge badge--scheduled">Open Registration</span>
-                    <span class="badge badge--severity-low">Batch #04 · Live Online</span>
+                    <span class="badge badge--scheduled" data-id="Pendaftaran Dibuka">Open Registration</span>
+                    <span class="badge badge--severity-low" data-id="Batch #04 · Daring Langsung">Batch #04 · Live Online</span>
                   </p>
-                  <h3>Radova System Administrator Bootcamp</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <p class="meta">
-                    <span><i class="ph ph-calendar" aria-hidden="true"></i> Lorem: 00 Ipsum 0000</span>
-                    <span><i class="ph ph-users" aria-hidden="true"></i> Dolor: 00 / 00 Amet</span>
-                  </p>
+                  <h3 data-id="Bootcamp Administrator Sistem Radova">Radova System Administrator Bootcamp</h3>
+                  <p data-id="Program intensif 4 minggu membahas administrasi server produksi, otomasi backup, serta penanganan insiden sistem secara langsung bersama mentor inti Radova.">An intensive 4-week program covering production server administration, backup automation, and live incident response with core Radova mentors.</p>
                 </div>
                 <div class="post-row__panel">
                   <dl class="meta-dl">
-                    <dt>Schedule</dt>
-                    <dd>Lorem &amp; Ipsum · 00:00 WIB</dd>
-                    <dt>Duration</dt>
-                    <dd>Lorem Ipsum (00 Ipsum)</dd>
-                    <dt>Fee</dt>
-                    <dd class="meta-dl__lead">Lorem (Ipsum Dolor)</dd>
+                    <dt data-id="Jadwal">Schedule</dt>
+                    <dd data-id="Sab & Min · 02:00 UTC">Sat & Sun · 02:00 UTC</dd>
+                    <dt data-id="Durasi">Duration</dt>
+                    <dd data-id="4 Minggu (32 Jam)">4 Weeks (32 Hours)</dd>
+                    <dt data-id="Biaya">Fee</dt>
+                    <dd class="meta-dl__lead" data-id="Gratis (Hibah Komunitas)">Free (Community Grant)</dd>
+                    <dt data-id="Kuota">Quota</dt>
+                    <dd data-id="Tersisa 14 / 30 Kursi">14 / 30 Seats Left</dd>
                   </dl>
-                  <a class="button button--navy" href="#register-bootcamp">Apply for Batch #04</a>
                 </div>
               </article>
             </li>
@@ -329,26 +332,23 @@
               <article class="post-row">
                 <div class="post-row__main">
                   <p class="post-row__kicker">
-                    <span class="badge badge--severity-medium">Upcoming</span>
-                    <span class="badge badge--severity-low">Batch #02 · Hybrid Lab</span>
+                    <span class="badge badge--severity-medium" data-id="Akan Datang">Upcoming</span>
+                    <span class="badge badge--severity-low" data-id="Batch #02 · Lab Hibrida">Batch #02 · Hybrid Lab</span>
                   </p>
-                  <h3>Digital Repository &amp; Archive Infrastructure Bootcamp</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <p class="meta">
-                    <span><i class="ph ph-calendar" aria-hidden="true"></i> Lorem: 00 Ipsum 0000</span>
-                    <span><i class="ph ph-users" aria-hidden="true"></i> Dolor: 00 / 00 Amet</span>
-                  </p>
+                  <h3 data-id="Bootcamp Infrastruktur Repositori Digital & Arsip">Digital Repository & Archive Infrastructure Bootcamp</h3>
+                  <p data-id="Pelatihan khusus pengelola perpustakaan dan pusat arsip untuk membangun infrastruktur repositori institusi berbasis Radova Linux yang tangguh.">Specialized training for librarians and archivists to build resilient institutional repository infrastructure powered by Radova Linux.</p>
                 </div>
                 <div class="post-row__panel">
                   <dl class="meta-dl">
-                    <dt>Schedule</dt>
-                    <dd>Lorem &amp; Ipsum · 00:00 WIB</dd>
-                    <dt>Duration</dt>
-                    <dd>Lorem Ipsum (00 Ipsum)</dd>
-                    <dt>Fee</dt>
-                    <dd class="meta-dl__lead">IDR 000.000</dd>
+                    <dt data-id="Jadwal">Schedule</dt>
+                    <dd data-id="Sel & Kam · 19:00 WIB">Tue & Thu · 19:00 WIB</dd>
+                    <dt data-id="Durasi">Duration</dt>
+                    <dd data-id="3 Minggu (24 Jam)">3 Weeks (24 Hours)</dd>
+                    <dt data-id="Biaya">Fee</dt>
+                    <dd class="meta-dl__lead" data-id="Rp 350.000">IDR 350.000</dd>
+                    <dt data-id="Kuota">Quota</dt>
+                    <dd data-id="Tersisa 25 / 25 Kursi">25 / 25 Seats Left</dd>
                   </dl>
-                  <a class="button button--outline-navy" href="#register-bootcamp">Join Waitlist</a>
                 </div>
               </article>
             </li>
@@ -356,30 +356,33 @@
 
           <div id="register-bootcamp" class="registration-box">
             <div class="registration-box__info">
-              <p class="eyebrow">BOOTCAMP REGISTRATION</p>
-              <h3>Reserve Your Cohort Seat</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="eyebrow" data-id="PENDAFTARAN BOOTCAMP">BOOTCAMP REGISTRATION</p>
+              <h3 data-id="Amankan Kursi Kohort Anda">Reserve Your Cohort Seat</h3>
+              <p data-id="Isi formulir pendaftaran di samping untuk mengamankan kursi pada batch yang tersedia. Konfirmasi dan akses lab akan dikirimkan ke email terdaftar maksimal 1×24 jam.">Fill out the registration form beside to secure your seat in an available batch. Confirmation and lab access will be sent to your registered email within 24 hours.</p>
             </div>
             <form class="registration-form" action="/learns/bootcamp/register" method="post">
-              <label for="bc-name">Full Name
-                <input id="bc-name" name="name" type="text" placeholder="Lorem ipsum dolor sit amet" required>
+              <label for="bc-name">
+                <span data-id="Nama Lengkap">Full Name</span>
+                <input id="bc-name" name="name" type="text" placeholder="Full name as shown on certificate" data-id-placeholder="Nama lengkap sesuai sertifikat" required>
               </label>
-              <label for="bc-email">Email Address
-                <input id="bc-email" name="email" type="email" placeholder="lorem@ipsum.dolor" required>
+              <label for="bc-email">
+                <span data-id="Alamat Email">Email Address</span>
+                <input id="bc-email" name="email" type="email" placeholder="you@domain.org" required>
               </label>
-              <label for="bc-program">Select Bootcamp Batch
+              <label for="bc-program">
+                <span data-id="Pilih Batch Bootcamp">Select Bootcamp Batch</span>
                 <select id="bc-program" name="program" required>
-                  <option value="sysadmin-b04">Lorem Ipsum Dolor Sit Amet (Dolor #04)</option>
-                  <option value="dam-b02">Ipsum Dolor Sit Amet Consectetur (Dolor #02)</option>
+                  <option value="sysadmin-b04" data-id="Bootcamp Administrator Sistem Radova (Batch #04)">Radova System Administrator Bootcamp (Batch #04)</option>
+                  <option value="dam-b02" data-id="Infrastruktur Repositori Digital & Arsip (Batch #02)">Digital Repository & Archive Infrastructure (Batch #02)</option>
                 </select>
               </label>
-              <button type="submit" class="button">Submit Bootcamp Application</button>
+              <button type="submit" class="button" data-id="Kirim Pendaftaran Bootcamp">Submit Bootcamp Application</button>
             </form>
           </div>
         </section>
 
         <!-- =====================================================================
-             PANEL 4: CERTIFICATION (Referensi Struktur Certified Ethical Hacker / CEH)
+             PANEL 4: CERTIFICATION
              ===================================================================== -->
         <section
           id="panel-certification"
@@ -390,10 +393,10 @@
         >
           <div class="section-banner">
             <div>
-              <p class="eyebrow">04 // CREDENTIAL &amp; EXAM BOARD</p>
-              <h2 id="heading-certification">Professional Certifications</h2>
+              <p class="eyebrow" data-id="04 // DEWAN KREDENSIAL & UJIAN">04 // CREDENTIAL & EXAM BOARD</p>
+              <h2 id="heading-certification" data-id="Sertifikasi Profesional">Professional Certifications</h2>
             </div>
-            <a class="button" href="#register-certification"><i class="ph ph-seal-check" aria-hidden="true"></i> Register Exam</a>
+            <a class="button" href="#register-certification"><i class="ph ph-seal-check" aria-hidden="true"></i> <span data-id="Daftar Ujian">Register Exam</span></a>
           </div>
 
           <ol class="post-grid" aria-label="Available certifications">
@@ -401,40 +404,39 @@
               <article class="post-row cert-row">
                 <div class="post-row__main">
                   <p class="post-row__kicker">
-                    <span class="badge badge--severity-critical">Flagship Credential</span>
-                    <span class="badge badge--type">Exam Code: RCSA-312</span>
+                    <span class="badge badge--severity-critical" data-id="Kredensial Utama">Flagship Credential</span>
+                    <span class="badge badge--type" data-id="Kode Ujian: RCSA-312">Exam Code: RCSA-312</span>
                   </p>
-                  <h3>Radova Certified Security &amp; System Architect (RCSSA)</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <h3>Radova Certified Security & System Architect (RCSSA)</h3>
+                  <p data-id="Sertifikasi kompetensi berbasis praktik untuk menguji kemampuan hardening sistem, audit keamanan jaringan, respons insiden, dan arsitektur server zero-trust di atas Radova Linux.">Hands-on competency certification testing system hardening, network security auditing, incident response, and zero-trust server architecture on Radova Linux.</p>
 
                   <div class="cert-domains">
-                    <h4>Core Exam Domains</h4>
+                    <h4 data-id="Domain Utama Ujian">Core Exam Domains</h4>
                     <ul>
-                      <li><strong>01.</strong> Lorem ipsum dolor sit amet, consectetur (15%)</li>
-                      <li><strong>02.</strong> Adipiscing elit, sed do eiusmod tempor (25%)</li>
-                      <li><strong>03.</strong> Incididunt ut labore et dolore magna (20%)</li>
-                      <li><strong>04.</strong> Aliqua enim ad minim veniam quis (20%)</li>
-                      <li><strong>05.</strong> Nostrud exercitation ullamco laboris (20%)</li>
+                      <li data-id="<strong>01.</strong> Pengintaian, Permukaan Serangan & Audit Sistem (15%)"><strong>01.</strong> Reconnaissance, Attack Surface & System Auditing (15%)</li>
+                      <li data-id="<strong>02.</strong> Hardening Kernel, Hak Akses & Mandatory Access Control (25%)"><strong>02.</strong> Kernel Hardening, Permissions & Mandatory Access Control (25%)</li>
+                      <li data-id="<strong>03.</strong> Pertahanan Jaringan, Kriptografi & Tunneling WireGuard (20%)"><strong>03.</strong> Network Defense, Cryptography & WireGuard Tunneling (20%)</li>
+                      <li data-id="<strong>04.</strong> Isolasi Layanan, Keamanan Kontainer & Integritas Rantai Pasok (20%)"><strong>04.</strong> Service Isolation, Container Security & Supply-Chain Integrity (20%)</li>
+                      <li data-id="<strong>05.</strong> Lab Respons Insiden Langsung & Pemulihan Forensik (20%)"><strong>05.</strong> Live Incident Response & Forensics Recovery Lab (20%)</li>
                     </ul>
                   </div>
                 </div>
 
                 <div class="post-row__panel">
                   <dl class="meta-dl">
-                    <dt>Exam Code</dt>
+                    <dt data-id="Kode Ujian">Exam Code</dt>
                     <dd class="advisory-id">RCSA-312</dd>
-                    <dt>Format</dt>
-                    <dd>00 Lorem + 0 Dolor</dd>
-                    <dt>Duration</dt>
-                    <dd>0 Ipsum (Dolor)</dd>
-                    <dt>Passing Score</dt>
-                    <dd>00% Lorem</dd>
-                    <dt>Validity</dt>
-                    <dd>0 Lorem</dd>
-                    <dt>Exam Voucher</dt>
-                    <dd class="meta-dl__lead">IDR 000.000</dd>
+                    <dt data-id="Format">Format</dt>
+                    <dd data-id="60 PG + 6 Lab Praktik">60 MCQ + 6 Practical Labs</dd>
+                    <dt data-id="Durasi">Duration</dt>
+                    <dd data-id="4 Jam (Diawasi)">4 Hours (Proctored)</dd>
+                    <dt data-id="Nilai Kelulusan">Passing Score</dt>
+                    <dd data-id="Minimal 75%">75% Minimum</dd>
+                    <dt data-id="Masa Berlaku">Validity</dt>
+                    <dd data-id="3 Tahun">3 Years</dd>
+                    <dt data-id="Voucher Ujian">Exam Voucher</dt>
+                    <dd class="meta-dl__lead" data-id="Rp 750.000">IDR 750.000</dd>
                   </dl>
-                  <a class="button" href="#register-certification">Schedule RCSSA Exam</a>
                 </div>
               </article>
             </li>
@@ -443,39 +445,38 @@
               <article class="post-row cert-row">
                 <div class="post-row__main">
                   <p class="post-row__kicker">
-                    <span class="badge badge--scheduled">Associate Level</span>
-                    <span class="badge badge--type">Exam Code: RCSA-101</span>
+                    <span class="badge badge--scheduled" data-id="Tingkat Madya">Associate Level</span>
+                    <span class="badge badge--type" data-id="Kode Ujian: RCLA-101">Exam Code: RCLA-101</span>
                   </p>
                   <h3>Radova Certified Linux Administrator (RCLA)</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <code>lorem-ipsum</code>.</p>
+                  <p data-id="Validasi kemampuan operasional harian administrator sistem Radova Linux: instalasi, manajemen paket <code>packer</code>, penyimpanan, dan pemeliharaan layanan.">Validates daily operational skills of a Radova Linux system administrator: installation, <code>packer</code> package management, storage, and service maintenance.</p>
 
                   <div class="cert-domains">
-                    <h4>Core Exam Domains</h4>
+                    <h4 data-id="Domain Utama Ujian">Core Exam Domains</h4>
                     <ul>
-                      <li><strong>01.</strong> Lorem ipsum dolor sit amet, consectetur (25%)</li>
-                      <li><strong>02.</strong> Adipiscing elit, sed do eiusmod tempor (25%)</li>
-                      <li><strong>03.</strong> Incididunt ut labore et dolore magna (25%)</li>
-                      <li><strong>04.</strong> Aliqua enim ad minim veniam quis (25%)</li>
+                      <li data-id="<strong>01.</strong> Instalasi Sistem, Bootloader & Manajemen Penyimpanan (25%)"><strong>01.</strong> System Installation, Bootloader & Storage Management (25%)</li>
+                      <li data-id="<strong>02.</strong> Siklus Hidup Paket & Pemeliharaan Repositori (25%)"><strong>02.</strong> Package Lifecycle & Repository Maintenance (25%)</li>
+                      <li data-id="<strong>03.</strong> Manajemen Pengguna, Proses & Daemon Init (25%)"><strong>03.</strong> User Management, Process & Init Daemons (25%)</li>
+                      <li data-id="<strong>04.</strong> Operasi Jaringan & Pencadangan (25%)"><strong>04.</strong> Networking & Backup Operations (25%)</li>
                     </ul>
                   </div>
                 </div>
 
                 <div class="post-row__panel">
                   <dl class="meta-dl">
-                    <dt>Exam Code</dt>
+                    <dt data-id="Kode Ujian">Exam Code</dt>
                     <dd class="advisory-id">RCLA-101</dd>
-                    <dt>Format</dt>
-                    <dd>000% Lorem Dolor</dd>
-                    <dt>Duration</dt>
-                    <dd>0.0 Ipsum (Dolor)</dd>
-                    <dt>Passing Score</dt>
-                    <dd>00% Lorem</dd>
-                    <dt>Validity</dt>
-                    <dd>0 Lorem</dd>
-                    <dt>Exam Voucher</dt>
-                    <dd class="meta-dl__lead">IDR 000.000</dd>
+                    <dt data-id="Format">Format</dt>
+                    <dd data-id="100% Lab Terminal Praktik">100% Hands-on Terminal Lab</dd>
+                    <dt data-id="Durasi">Duration</dt>
+                    <dd data-id="2,5 Jam (Diawasi)">2.5 Hours (Proctored)</dd>
+                    <dt data-id="Nilai Kelulusan">Passing Score</dt>
+                    <dd data-id="Minimal 70%">70% Minimum</dd>
+                    <dt data-id="Masa Berlaku">Validity</dt>
+                    <dd data-id="3 Tahun">3 Years</dd>
+                    <dt data-id="Voucher Ujian">Exam Voucher</dt>
+                    <dd class="meta-dl__lead" data-id="Rp 450.000">IDR 450.000</dd>
                   </dl>
-                  <a class="button button--navy" href="#register-certification">Schedule RCLA Exam</a>
                 </div>
               </article>
             </li>
@@ -483,27 +484,31 @@
 
           <div id="register-certification" class="registration-box">
             <div class="registration-box__info">
-              <p class="eyebrow">EXAMINATION REGISTRATION</p>
-              <h3>Apply for Certification Exam</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="eyebrow" data-id="PENDAFTARAN UJIAN">EXAMINATION REGISTRATION</p>
+              <h3 data-id="Ajukan Ujian Sertifikasi">Apply for Certification Exam</h3>
+              <p data-id="Daftarkan diri untuk mendapatkan kode voucher ujian dan jadwal sesi pengawasan daring (<em>online proctoring</em>). Kandidat lulus mendapatkan sertifikat digital terverifikasi dengan ID kredensial unik.">Register to receive your exam voucher code and online proctoring session schedule. Passing candidates receive a verified digital certificate with a unique credential ID.</p>
             </div>
             <form class="registration-form" action="/learns/certification/register" method="post">
-              <label for="cert-name">Candidate Legal Name
-                <input id="cert-name" name="name" type="text" placeholder="Lorem ipsum dolor sit amet" required>
+              <label for="cert-name">
+                <span data-id="Nama Resmi Kandidat">Candidate Legal Name</span>
+                <input id="cert-name" name="name" type="text" placeholder="Full legal name for credential" data-id-placeholder="Nama lengkap untuk kredensial" required>
               </label>
-              <label for="cert-email">Email Address
-                <input id="cert-email" name="email" type="email" placeholder="lorem@ipsum.dolor" required>
+              <label for="cert-email">
+                <span data-id="Alamat Email">Email Address</span>
+                <input id="cert-email" name="email" type="email" placeholder="candidate@domain.org" required>
               </label>
-              <label for="cert-exam">Select Certification Exam
+              <label for="cert-exam">
+                <span data-id="Pilih Ujian Sertifikasi">Select Certification Exam</span>
                 <select id="cert-exam" name="exam" required>
-                  <option value="RCSA-312">LOR-312 — Lorem Ipsum Dolor Sit Amet</option>
-                  <option value="RCLA-101">LOR-101 — Ipsum Dolor Sit Amet Consectetur</option>
+                  <option value="RCSA-312">RCSA-312 — Radova Certified Security & System Architect</option>
+                  <option value="RCLA-101">RCLA-101 — Radova Certified Linux Administrator</option>
                 </select>
               </label>
-              <label for="cert-date">Preferred Exam Date
+              <label for="cert-date">
+                <span data-id="Tanggal Ujian Pilihan">Preferred Exam Date</span>
                 <input id="cert-date" name="exam_date" type="date" required>
               </label>
-              <button type="submit" class="button">Request Exam Voucher</button>
+              <button type="submit" class="button" data-id="Ajukan Voucher Ujian">Request Exam Voucher</button>
             </form>
           </div>
         </section>
@@ -567,7 +572,7 @@
     </footer>
 
     <script src="/assets/htmx.min.js" defer></script>
-    <script src="/assets/site.js?v=6" defer></script>
+    <script src="/assets/site.js?v=7" defer></script>
     <script src="/assets/navbar.js?v=3" defer></script>
     <script src="/assets/learns.js" defer></script>
   </body>

@@ -1756,3 +1756,298 @@ button.btn-lang:hover {
   }
 }
 
+
+/* ==========================================================================
+   Dark Mode Toggle Button & Official Radova Dark Palette (darkmode.pdf)
+   Background: #0B0711 | Card: #150B52 | Deep Navy: #0E0347
+   Primary Text: #FFFFFF | Secondary Text: #C4C0D4
+   Primary: #A10000 | Hover: #BB080B | CTA Accent: #DB000F | Blue: #0035C6
+   ========================================================================== */
+button.btn-theme {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-height: 36px;
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
+  border-radius: 999px;
+  border: 1.5px solid rgba(14, 3, 71, 0.18);
+  background: #ffffff;
+  color: #0E0347;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 160ms ease, color 160ms ease, background-color 160ms ease, transform 140ms ease;
+}
+
+button.btn-theme + button.btn-lang {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  button.btn-theme {
+    margin-left: 0;
+  }
+}
+
+button.btn-theme:hover {
+  border-color: #DB000F;
+  color: #DB000F;
+  background: #F7F6FF;
+}
+
+button.btn-theme:active {
+  transform: scale(0.96);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  /* Keep --white and --red-900 intact so buttons & accents never invert */
+  --lavender: #150B52;
+  --muted: #C4C0D4;
+  --line: rgba(196, 192, 212, 0.18);
+
+  --pico-background-color: #0B0711;
+  --pico-color: #FFFFFF;
+  --pico-muted-color: #C4C0D4;
+  --pico-h1-color: #FFFFFF;
+  --pico-h2-color: #FFFFFF;
+  --pico-h3-color: #FFFFFF;
+  --pico-primary: #DB000F;
+  --pico-primary-hover: #BB080B;
+  --pico-card-background-color: #150B52;
+  --pico-card-border-color: rgba(196, 192, 212, 0.18);
+}
+
+:root[data-theme="dark"],
+:root[data-theme="dark"] body {
+  background-color: #0B0711;
+  color: #FFFFFF;
+}
+
+:root[data-theme="dark"] h1,
+:root[data-theme="dark"] h2,
+:root[data-theme="dark"] h3,
+:root[data-theme="dark"] h4,
+:root[data-theme="dark"] h5,
+:root[data-theme="dark"] h6,
+:root[data-theme="dark"] .hero-split-right h1,
+:root[data-theme="dark"] .manifesto-title,
+:root[data-theme="dark"] .fitur-head h2,
+:root[data-theme="dark"] .section-center,
+:root[data-theme="dark"] .card-zone-body h3,
+:root[data-theme="dark"] .spec-card h3,
+:root[data-theme="dark"] .spec-val,
+:root[data-theme="dark"] .ledger-item h3,
+:root[data-theme="dark"] .manifesto-quote p {
+  color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .hero-split-left h1 span,
+:root[data-theme="dark"] .manifesto-title span,
+:root[data-theme="dark"] .section-center span,
+:root[data-theme="dark"] .manifesto-eyebrow,
+:root[data-theme="dark"] .eyebrow {
+  color: #DB000F;
+}
+
+:root[data-theme="dark"] .site-header {
+  background: rgba(11, 7, 17, 0.88);
+  border-bottom-color: rgba(196, 192, 212, 0.16);
+}
+
+:root[data-theme="dark"] .brand-name,
+:root[data-theme="dark"] .nav-list a {
+  color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .nav-toggle span {
+  background-color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .nav-list a:hover {
+  color: #DB000F;
+}
+
+:root[data-theme="dark"] .dropdown-content {
+  background-color: #150B52;
+  border-color: rgba(196, 192, 212, 0.22);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+}
+
+:root[data-theme="dark"] .dropdown-content a,
+:root[data-theme="dark"] .dropdown-content button.d-content-back {
+  color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .dropdown-content a:hover,
+:root[data-theme="dark"] .dropdown-content button.d-content-back:hover {
+  background-color: #0E0347;
+  color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .btn-navy {
+  background-color: #150B52;
+  border-color: rgba(196, 192, 212, 0.28);
+  color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .btn-navy:hover {
+  background-color: #DB000F;
+  border-color: #DB000F;
+  color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .btn-outline,
+:root[data-theme="dark"] .btn-white {
+  background-color: #150B52;
+  border-color: rgba(196, 192, 212, 0.28);
+  color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .btn-outline:hover,
+:root[data-theme="dark"] .btn-white:hover {
+  background-color: #0E0347;
+  border-color: #DB000F;
+  color: #FFFFFF;
+}
+
+:root[data-theme="dark"] button.btn-theme,
+:root[data-theme="dark"] button.btn-lang {
+  background-color: #150B52;
+  border-color: rgba(196, 192, 212, 0.28);
+  color: #F7F6FF;
+}
+
+:root[data-theme="dark"] button.btn-theme:hover,
+:root[data-theme="dark"] button.btn-lang:hover {
+  border-color: #DB000F;
+  color: #FFFFFF;
+  background-color: #0E0347;
+}
+
+:root[data-theme="dark"] .hero {
+  background:
+    radial-gradient(46% 52% at 82% 18%, rgba(219, 0, 15, 0.16), transparent 72%),
+    radial-gradient(38% 46% at 15% 32%, rgba(21, 11, 82, 0.45), transparent 72%),
+    #0B0711;
+}
+
+:root[data-theme="dark"] #manifesto,
+:root[data-theme="dark"] #fitur,
+:root[data-theme="dark"] #spesifikasi {
+  background-color: #0B0711;
+}
+
+:root[data-theme="dark"] .hero-spec-strip {
+  background: transparent;
+  border-color: rgba(196, 192, 212, 0.16);
+  color: #C4C0D4;
+}
+
+:root[data-theme="dark"] .hero-chip {
+  background-color: rgba(219, 0, 15, 0.14);
+  border-color: rgba(219, 0, 15, 0.45);
+  color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .card-index-pill {
+  background-color: rgba(219, 0, 15, 0.18);
+  color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .ledger-item {
+  background: transparent;
+  border-color: rgba(196, 192, 212, 0.16);
+  color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .ledger-item h3::before {
+  color: #DB000F;
+}
+
+:root[data-theme="dark"] .manifesto-quote {
+  background-color: #150B52;
+  border-color: rgba(196, 192, 212, 0.16);
+  border-left: 3px solid #DB000F;
+  color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .spec-card-interlock,
+:root[data-theme="dark"] .spec-card {
+  background-color: #150B52;
+  border-color: rgba(196, 192, 212, 0.16);
+  color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .card-icon-wrap {
+  background-color: #0E0347;
+  border: 1px solid rgba(196, 192, 212, 0.18);
+}
+
+:root[data-theme="dark"] .icon-phosphor,
+:root[data-theme="dark"] .spec-card::before {
+  background-color: #F7F6FF;
+}
+
+:root[data-theme="dark"] .card-dock {
+  background-color: #0E0347;
+  border-top-color: rgba(196, 192, 212, 0.14);
+}
+
+:root[data-theme="dark"] .card-dock code {
+  background-color: #0B0711;
+  color: #F7F6FF;
+  border-color: rgba(196, 192, 212, 0.2);
+}
+
+:root[data-theme="dark"] .card-dock dd,
+:root[data-theme="dark"] .spec-card dd {
+  color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .card-dock dt,
+:root[data-theme="dark"] .spec-card dt,
+:root[data-theme="dark"] .card-zone-body p,
+:root[data-theme="dark"] .spec-card p,
+:root[data-theme="dark"] .ledger-item p,
+:root[data-theme="dark"] .manifesto-lead,
+:root[data-theme="dark"] .manifesto-deep,
+:root[data-theme="dark"] .manifesto-quote cite,
+:root[data-theme="dark"] .fitur-head-meta,
+:root[data-theme="dark"] .section-lead,
+:root[data-theme="dark"] .hero-lead,
+:root[data-theme="dark"] .lead {
+  color: #C4C0D4;
+}
+
+:root[data-theme="dark"] .spec-card-interlock:hover,
+:root[data-theme="dark"] .spec-card:hover {
+  border-color: #DB000F;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+}
+
+:root[data-theme="dark"] .btn-outline {
+  background-color: transparent;
+  border-color: rgba(196, 192, 212, 0.35);
+  color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .btn-outline:hover {
+  background-color: rgba(219, 0, 15, 0.16);
+  border-color: #DB000F;
+  color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .site-footer {
+  background: linear-gradient(180deg, #0E0347 0%, #0B0711 100%);
+  border-top-color: #DB000F;
+}
+
+@media (max-width: 767px) {
+  :root[data-theme="dark"] .header-menu {
+    background-color: #0B0711;
+  }
+}
