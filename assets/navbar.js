@@ -1,4 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
+// About dropdown. Loaded lazily via the bundle, so init may run after DOMContentLoaded.
+((init) => {
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+    else init();
+})(() => {
     const navBtn = document.getElementById('about-menu-btn');
     const dropdownContainer = document.querySelector('.dropdown');
     const backBtn = document.querySelector('.d-content-back');

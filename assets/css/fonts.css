@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/lato-latin-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/lato-latin-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato Fallback";
+  src: local("system-ui"), local("-apple-system"), local("Segoe UI"), sans-serif;
+  size-adjust: 99%;
+}
+
+@font-face {
+  font-family: "Roboto Variable";
+  src: url("../fonts/roboto-latin-wght.woff2") format("woff2-variations");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Fallback";
+  src: local("system-ui"), local("-apple-system"), local("Segoe UI"), sans-serif;
+  size-adjust: 100%;
+}

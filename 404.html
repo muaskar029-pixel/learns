@@ -5,31 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
   <title>Under Construction — Radova Linux</title>
-  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/lato-latin-900.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-latin-wght.woff2" crossorigin>
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-  <meta name="htmx-config" content='{"selfRequestsOnly":true,"allowScriptTags":false,"allowEval":false}'>
-  <link rel="stylesheet" href="/assets/pico.min.css">
-  <link rel="stylesheet" href="/assets/site.css?v=16">
-  <script src="/assets/htmx.min.js" defer></script>
+  <meta name="description" content="This page of Radova Learns is under construction.">
+  <link rel="icon" type="image/png" href="/learns/assets/logo.png">
+  <link rel="stylesheet" href="/learns/assets/css/learns.bundle.css">
+  <script>try{if(localStorage.getItem("radova-theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
 </head>
 <body>
   <header class="site-header">
-    <span class="brand-lockup">
-      <svg class="brand-mark" role="img" aria-label="Radova Linux Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="28" fill="none">
-        <rect width="28" height="28" rx="6" fill="#DB000F"/>
-        <path d="M14 6L7.5 20h3.8l2.7-5.8 2.7 5.8h3.8L14 6z" fill="#FFFFFF"/>
-        <circle cx="14" cy="17.5" r="1.5" fill="#0E0347"/>
-      </svg>
+    <a class="brand-lockup" href="/">
+      <img src="/learns/assets/logo.png" alt="Radova Logo" width="32" height="32">
       <span class="brand-name">RADOVA</span>
-    </span>
-    <div class="header-cta">
-      <button type="button" id="theme-toggle" class="btn-theme" data-set-theme="light" hx-get="/assets/theme-dark.html" hx-target="#theme-toggle" hx-swap="outerHTML" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
-        <svg width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M216.7 152.6A91.9 91.9 0 0 1 103.4 39.3a92 92 0 1 0 113.3 113.3Z"/></svg>
-      </button>
-      <button type="button" id="lang-toggle" class="btn-lang" aria-label="Switch language to Indonesian">EN</button>
-      <a href="/" class="btn btn-primary btn-sm" hx-boost="true" data-i18n="err.home">Home</a>
+    </a>
+
+    <div id="primary-nav" class="header-menu">
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a target="_blank" href="https://packer.radova.org" data-i18n="nav.packages">Packages</a></li>
+          <li><a target="_blank" href="https://wiki.radova.org" data-i18n="nav.wiki">Wiki</a></li>
+          <li><a href="https://radova.org/learns" data-i18n="nav.learning">Learning</a></li>
+          <li><a href="https://radova.org/events" data-i18n="nav.events">Events</a></li>
+          <li><a href="https://radova.org/latest/" data-i18n="nav.latest">Latest</a></li>
+        </ul>
+      </nav>
+
+      <nav class="navbar" aria-label="About menu">
+        <ul class="nav-links">
+          <li class="dropdown">
+            <button type="button" id="about-menu-btn" class="btn-navy" aria-haspopup="true" aria-expanded="false" data-i18n="nav.about">About</button>
+            <div class="menu-arrow" aria-hidden="true"></div>
+            <div class="dropdown-content">
+              <a class="d-content-h" href="https://radova.org/about/" data-i18n="nav.about">About</a>
+              <a class="d-content-r" href="https://radova.org/about/history" data-i18n="nav.history">History</a>
+              <a class="d-content-c" href="https://radova.org/about/contact" data-i18n="nav.contact">Contact</a>
+              <button type="button" class="d-content-back" data-i18n="nav.back">Back</button>
+            </div>
+          </li>
+        </ul>
+      </nav>
     </div>
+
+    <button type="button" id="theme-toggle" class="btn-theme" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+      <svg class="ic-moon" width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" aria-hidden="true"><path d="M216.7 152.6A91.9 91.9 0 0 1 103.4 39.3a92 92 0 1 0 113.3 113.3Z"/></svg>
+      <svg class="ic-sun" width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" aria-hidden="true"><circle cx="128" cy="128" r="56"/><path d="M128 36V16M128 240v-20M36 128H16M240 128h-20M63 63 49 49M207 207l-14-14M193 63l14-14M49 207l14-14"/></svg>
+    </button>
+
+    <button type="button" id="lang-toggle" class="btn-lang" aria-label="Switch language to Indonesian">EN</button>
+
+    <button
+      type="button"
+      class="nav-toggle"
+      aria-label="Open navigation menu"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
   <main id="main" tabindex="-1">
@@ -46,7 +78,7 @@
   <footer class="site-footer">
     <div class="footer-grid">
       <nav class="footer-col" aria-label="Learn About Radova">
-        <h3 class="footer-heading" data-i18n="footer.col1">Learn About Radova</h3>
+        <h2 class="footer-heading" data-i18n="footer.col1">Learn About Radova</h2>
         <ul class="footer-links">
           <li><a href="https://radova.org/about/" data-i18n="nav.about">About</a></li>
           <li><a href="https://radova.org/about/history" data-i18n="nav.history">History</a></li>
@@ -56,7 +88,7 @@
       </nav>
 
       <nav class="footer-col" aria-label="Resources">
-        <h3 class="footer-heading" data-i18n="footer.col2">Resources</h3>
+        <h2 class="footer-heading" data-i18n="footer.col2">Resources</h2>
         <ul class="footer-links">
           <li><a target="_blank" rel="noopener" href="https://packer.radova.org" data-i18n="nav.packages">Packages</a></li>
           <li><a target="_blank" rel="noopener" href="https://wiki.radova.org" data-i18n="nav.wiki">Wiki</a></li>
@@ -66,7 +98,7 @@
       </nav>
 
       <nav class="footer-col" aria-label="Core Pillars">
-        <h3 class="footer-heading" data-i18n="footer.col3">Core Pillars</h3>
+        <h2 class="footer-heading" data-i18n="footer.col3">Core Pillars</h2>
         <ul class="footer-links">
           <li><a href="https://radova.org/#fitur">Memora</a></li>
           <li><a href="https://radova.org/#fitur">Evrocks</a></li>
@@ -76,7 +108,7 @@
       </nav>
 
       <nav class="footer-col" aria-label="Help and Specs">
-        <h3 class="footer-heading" data-i18n="footer.col4">Help &amp; Specs</h3>
+        <h2 class="footer-heading" data-i18n="footer.col4">Help &amp; Specs</h2>
         <ul class="footer-links">
           <li><a href="https://radova.org/about/contact" data-i18n="nav.contact">Contact</a></li>
           <li><a href="https://radova.org/#spesifikasi" data-i18n="footer.specs">System Requirements</a></li>
@@ -88,7 +120,7 @@
     <div class="footer-bottom">
       <div class="footer-brand-bar">
         <span class="brand-lockup brand-lockup-light">
-          <img src="/assets/logo-white.png" alt="Radova Logo" width="28">
+          <img src="/learns/assets/logo-white.png" alt="Radova Logo" width="28" height="28" loading="lazy" decoding="async">
           <span class="brand-name">RADOVA</span>
         </span>
         <p class="footer-copy" data-i18n="footer.copy">© 2026 yuros.org · Released under the MIT License</p>
@@ -97,6 +129,16 @@
       <a class="footer-top" href="#main" data-i18n="footer.top">Back to top ↑</a>
     </div>
   </footer>
-  <script src="/assets/site.js?v=6" defer></script>
+  <script>
+    /* Load fonts + JS on first interaction (or now if dark/ID/hash needs it); replay an early button click. */
+    (function(b){var d=document,w=window,done,ev=["pointerdown","keydown","touchstart","mousemove","scroll"];
+    function load(){if(done)return;done=1;ev.forEach(function(e){removeEventListener(e,load)});
+    var l=d.createElement("link");l.rel="stylesheet";l.href=b+"css/fonts.css";d.head.appendChild(l);
+    var s=d.createElement("script");s.src=b+"js/learns.bundle.js";d.body.appendChild(s)}
+    ev.forEach(function(e){addEventListener(e,load,{passive:true})});
+    d.addEventListener("click",function(e){var t=!w.__rdvReady&&e.target.closest("button:not([type=submit])");if(t){w.__rdvQ=t;load()}},true);
+    try{if(localStorage.getItem("radova-theme")==="dark"||localStorage.getItem("radova-lang")==="id")load()}catch(_){}
+    if(location.hash.length>1)load()})("/learns/assets/");
+  </script>
 </body>
 </html>
