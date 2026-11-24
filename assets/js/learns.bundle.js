@@ -1,15 +1,13 @@
-(function (init) {
-if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
-else init();
-})(function () {
+(function () {
 "use strict";
 var root = document.documentElement;
+/* ---------- Hamburger menu ---------- */
 var toggleBtn = document.querySelector(".nav-toggle");
 var primaryNav = document.getElementById("primary-nav");
 if (toggleBtn && primaryNav) {
 var setMenuState = function (open) {
 toggleBtn.setAttribute("aria-expanded", String(open));
-toggleBtn.setAttribute("aria-label", open ? "Tutup menu navigasi" : "Buka menu navigasi");
+toggleBtn.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
 primaryNav.classList.toggle("is-open", open);
 document.body.style.overflow = open ? "hidden" : "";
 };
@@ -27,6 +25,14 @@ window.addEventListener("resize", function () {
 if (window.innerWidth >= 768) setMenuState(false);
 });
 }
+/* ---------- Language switcher (EN <-> ID) ----------
+Two markup styles share one engine:
+data-i18n="key"          -> text from ID_TEXT (shared header/footer)
+data-i18n-prefix="key"   -> first text node from ID_TEXT
+data-id="<html>"         -> inline Indonesian HTML (page content)
+data-id-placeholder="…"  -> Indonesian placeholder
+The English original is snapshotted lazily into data-en on the first switch to ID,
+so nothing touches the DOM on load while the page is English. */
 var LANG_KEY = "radova-lang";
 var ID_TEXT = {
 "skip": "Langsung ke konten",
@@ -106,6 +112,9 @@ applyLang(currentLang);
 try { localStorage.setItem(LANG_KEY, currentLang); } catch (_) {}
 });
 }
+/* ---------- Dark mode (vanilla, no HTMX) ----------
+The inline loader sets data-theme="dark" from localStorage before first paint;
+both icons live in the button and CSS shows the right one. */
 var THEME_KEY = "radova-theme";
 var themeBtn = document.getElementById("theme-toggle");
 if (themeBtn) {
@@ -124,11 +133,8 @@ syncThemeBtn();
 });
 syncThemeBtn();
 }
-});
-((init) => {
-if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
-else init();
-})(() => {
+})();
+(() => {
 const navBtn = document.getElementById('about-menu-btn');
 const dropdownContainer = document.querySelector('.dropdown');
 const backBtn = document.querySelector('.d-content-back');
@@ -177,11 +183,8 @@ document.addEventListener('keydown', (e) => {
 if (e.key === 'Escape') closeDropdown();
 });
 }
-});
-(function (init) {
-if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
-else init();
-})(function () {
+})();
+(function () {
 "use strict";
 var tabs = Array.from(document.querySelectorAll('.tab-grid [role="tab"]'));
 var panels = Array.from(document.querySelectorAll('.tab-panel[role="tabpanel"]'));
@@ -226,5 +229,5 @@ if (panel) {
 activateTab(panel.id.replace("panel-", ""), false);
 target.scrollIntoView({ behavior: "smooth" });
 }
-});
-(function(f){document.readyState==="loading"?document.addEventListener("DOMContentLoaded",f):f()})(function(){window.__rdvReady=true;var q=window.__rdvQ;window.__rdvQ=null;if(q)q.click()});
+})();
+window.__rdvReady=true;if(window.__rdvQ){var q=window.__rdvQ;window.__rdvQ=null;q.click();}

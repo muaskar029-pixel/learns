@@ -1,8 +1,5 @@
-// Learns page: curriculum tab switcher (translation lives in site.js).
-(function (init) {
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
-  else init();
-})(function () {
+// Learns page: curriculum tab switcher (loaded lazily by loader.js).
+(function () {
   "use strict";
   var tabs = Array.from(document.querySelectorAll('.tab-grid [role="tab"]'));
   var panels = Array.from(document.querySelectorAll('.tab-panel[role="tabpanel"]'));
@@ -55,4 +52,4 @@
     activateTab(panel.id.replace("panel-", ""), false);
     target.scrollIntoView({ behavior: "smooth" });
   }
-});
+})();

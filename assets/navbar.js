@@ -1,8 +1,5 @@
-// About dropdown. Loaded lazily via the bundle, so init may run after DOMContentLoaded.
-((init) => {
-    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
-    else init();
-})(() => {
+// About dropdown (loaded lazily by loader.js).
+(() => {
     const navBtn = document.getElementById('about-menu-btn');
     const dropdownContainer = document.querySelector('.dropdown');
     const backBtn = document.querySelector('.d-content-back');
@@ -65,4 +62,4 @@
             if (e.key === 'Escape') closeDropdown();
         });
     }
-});
+})();

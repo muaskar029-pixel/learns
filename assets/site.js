@@ -1,9 +1,5 @@
-// Shared header behaviour: hamburger menu, EN/ID language switcher, dark mode.
-// Loaded lazily (after first interaction) via assets/js/learns.bundle.js, so init may run after DOMContentLoaded.
-(function (init) {
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
-  else init();
-})(function () {
+// Shared header behaviour: hamburger menu, EN/ID language switcher, dark mode (loaded lazily by loader.js).
+(function () {
   "use strict";
   var root = document.documentElement;
 
@@ -14,7 +10,7 @@
   if (toggleBtn && primaryNav) {
     var setMenuState = function (open) {
       toggleBtn.setAttribute("aria-expanded", String(open));
-      toggleBtn.setAttribute("aria-label", open ? "Tutup menu navigasi" : "Buka menu navigasi");
+      toggleBtn.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
       primaryNav.classList.toggle("is-open", open);
       document.body.style.overflow = open ? "hidden" : "";
     };
@@ -159,4 +155,4 @@
 
     syncThemeBtn();
   }
-});
+})();

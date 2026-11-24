@@ -269,15 +269,7 @@ nav.tab-grid ul {
   animation: tabPanelFade 200ms cubic-bezier(.2, .7, .2, 1);
 }
 
-@keyframes tabPanelFade {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes tabPanelFade { from { transform: translateY(6px); } to { transform: none; } }
 }
 
 /* ---------- Section Banner (Matched with Home Page .fitur-head) ---------- */
@@ -1120,3 +1112,11 @@ body > footer.site-footer {
 
 /* learns: sections carry the container, so --pad-x is the DESIGN.md container gutter */
 :root { --pad-x: max(1rem, calc((100% - var(--container-max)) / 2)); }
+
+/* Hero split & empty media placeholder (16:9, 0 CLS) */
+.hero-split { display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-items: center; margin-bottom: 1.5rem; }
+@media (min-width: 1024px) { .hero-split { grid-template-columns: 1.15fr 0.85fr; gap: 2.5rem; } }
+.hero-split .editorial-header { margin-bottom: 0; }
+.hero-media { aspect-ratio: 16 / 9; overflow: hidden; border-radius: 20px; background: var(--lr-surface-alt, #F7F6FF); border: 1px dashed rgba(14, 3, 71, 0.18); }
+.hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+:root[data-theme="dark"] .hero-media { background: var(--lr-surface-alt, #150B52); border-color: rgba(196, 192, 212, 0.25); }
