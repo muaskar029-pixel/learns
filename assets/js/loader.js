@@ -1,4 +1,4 @@
-// Loads css/fonts.css and js/learns.bundle.js on first interaction (or now if dark/ID/hash needs it).
+// Loads css/fonts.css and js/learns.bundle.js on first interaction (or now if dark/hash needs it).
 (function () {
   "use strict";
   var base = document.currentScript.src;
@@ -26,7 +26,7 @@
   }, true);
 
   try {
-    if (localStorage.getItem("radova-theme") === "dark" || localStorage.getItem("radova-lang") === "id") load();
+    if (localStorage.getItem("radova-theme") === "dark") load();
   } catch (_) {}
   if (location.hash.length > 1) load();
 })();
