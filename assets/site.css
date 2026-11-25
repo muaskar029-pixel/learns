@@ -174,7 +174,7 @@ a:hover {
 .skip-link {
   position: absolute;
   top: -4rem;
-  left: 1rem;
+  inset-inline-start: 1rem;
   z-index: 100;
   padding: 0.5rem 1rem;
   background: var(--red-900);
@@ -267,7 +267,7 @@ body > header.site-header,
 
 /* Header Navbar & Dropdown Menu (matching abouts/contact) */
 .navbar {
-  margin-left: auto;
+  margin-inline-start: auto;
 }
 
 .nav-links {
@@ -295,8 +295,8 @@ nav.navbar li :where(a, [role="link"]) {
 .dropdown-content {
   position: absolute;
   top: calc(100% + 18px);
-  right: 0;
-  left: auto;
+  inset-inline-end: 0;
+  inset-inline-start: auto;
   transform: translateY(-6px);
   background: var(--white);
   min-width: 250px;
@@ -337,7 +337,7 @@ nav.navbar li :where(a, [role="link"]) {
   text-transform: uppercase;
   letter-spacing: 1px;
   text-decoration: none;
-  text-align: left;
+  text-align: start;
   border: none;
   border-bottom: 1px solid #F0F0F0;
   border-radius: 0;
@@ -383,13 +383,13 @@ nav.navbar li :where(a, [role="link"]) {
 .menu-arrow {
   position: absolute;
   top: 100%;
-  right: 20px;
-  left: auto;
+  inset-inline-end: 20px;
+  inset-inline-start: auto;
   transform: none;
   width: 0;
   height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
+  border-inline-start: 10px solid transparent;
+  border-inline-end: 10px solid transparent;
   border-bottom: 10px solid rgba(14, 3, 71, 0.14);
   z-index: 1000;
   display: none;
@@ -673,7 +673,7 @@ nav.footer-col {
   justify-content: space-between;
   flex: 1;
   gap: 1.5rem;
-  margin-left: 1.5rem;
+  margin-inline-start: 1.5rem;
 }
 
 /* Hamburger Toggle Button (Hidden on Desktop) */
@@ -687,7 +687,7 @@ nav.footer-col {
   height: 38px;
   padding: 0;
   margin: 0;
-  margin-left: auto;
+  margin-inline-start: auto;
   background: transparent;
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -751,7 +751,7 @@ nav.footer-col {
     justify-content: flex-start;
     width: 100%;
     height: calc(100dvh - 58px);
-    margin-left: 0;
+    margin-inline-start: 0;
     padding: 0.75rem var(--pad-x) 2rem;
     background: var(--white);
     border-top: 1px solid var(--line);
@@ -854,7 +854,7 @@ nav.footer-col {
   }
 
   .header-menu .navbar {
-    margin-left: 0;
+    margin-inline-start: 0;
   }
 }
 
@@ -886,14 +886,14 @@ button.btn-lang:hover {
 
 @media (max-width: 767px) {
   button.btn-lang {
-    margin-left: auto;
+    margin-inline-start: auto;
     padding: 0.45rem 0.75rem;
     position: relative;
     z-index: 1002;
   }
 
   .nav-toggle {
-    margin-left: 0;
+    margin-inline-start: 0;
   }
 }
 
@@ -911,7 +911,7 @@ button.btn-theme {
   height: 36px;
   min-height: 36px;
   margin: 0;
-  margin-left: auto;
+  margin-inline-start: auto;
   padding: 0;
   border-radius: 999px;
   border: 1.5px solid rgba(14, 3, 71, 0.18);
@@ -923,12 +923,12 @@ button.btn-theme {
 }
 
 button.btn-theme + button.btn-lang {
-  margin-left: 0;
+  margin-inline-start: 0;
 }
 
 @media (min-width: 768px) {
   button.btn-theme {
-    margin-left: 0;
+    margin-inline-start: 0;
   }
 }
 
