@@ -886,7 +886,7 @@ nav.tab-grid ul {
   color: #FFFFFF;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px) {button.btn-theme,.nav-toggle{width:44px;height:44px;min-height:44px}
   :root[data-theme="dark"] .header-menu .dropdown-content {
     background-color: transparent;
     border: none;
@@ -1120,3 +1120,4 @@ body > footer.site-footer {
 .hero-media { aspect-ratio: 16 / 9; overflow: hidden; border-radius: 20px; background: var(--lr-surface-alt, #F7F6FF); border: 1px dashed rgba(14, 3, 71, 0.18); }
 .hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 :root[data-theme="dark"] .hero-media { background: var(--lr-surface-alt, #150B52); border-color: rgba(196, 192, 212, 0.25); }
+body>header.site-header,.site-header{padding-block:10px;gap:20px}.brand-lockup{gap:10px}.site-header .brand-name{font-family:"Lato",system-ui,-apple-system,sans-serif;font-size:13px;font-weight:900;letter-spacing:0.02em;text-transform:uppercase;color:#0E0347}.nav-list{gap:28px}.site-header .nav-list a{font-family:"Roboto Variable",system-ui,-apple-system,sans-serif;font-size:15px;font-weight:500;color:#0E0347}.site-header .nav-list a[aria-current="page"]{font-weight:700}.site-header .btn-navy,.site-header #about-menu-btn.btn-navy{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;font-weight:700;text-transform:uppercase;padding:8px 16px;border-radius:16px;background-color:#A10000;color:#F7F6FF}.site-header button.btn-lang{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;font-weight:700;text-transform:uppercase;padding:8px 14px;border-radius:16px;color:#0E0347}:root[data-theme="dark"] .site-header .brand-name,:root[data-theme="dark"] .site-header .nav-list a{color:#FFFFFF}:root[data-theme="dark"] .site-header .btn-navy,:root[data-theme="dark"] .site-header #about-menu-btn.btn-navy,:root[data-theme="dark"] .site-header button.btn-lang{background-color:#150B52;color:#FFFFFF;border-color:rgba(196,192,212,0.28)}@media (max-width:767px){.site-header button.btn-lang{padding:7px 12px}.site-header .nav-list a{font-size:15.5px;font-weight:700;padding:9px 12px}}

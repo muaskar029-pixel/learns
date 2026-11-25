@@ -47,7 +47,7 @@ img {
   flex-shrink: 0;
 }
 
-html {
+html { scroll-padding-block-start: 5.5rem;
   max-width: 100%;
   overflow-x: clip;
   background-color: var(--white);
@@ -721,6 +721,7 @@ nav.footer-col {
 }
 
 @media (max-width: 767px) {
+  button.btn-theme, .nav-toggle { width: 44px; height: 44px; min-height: 44px; }
   .site-header {
     position: sticky;
     top: 0;
@@ -754,7 +755,7 @@ nav.footer-col {
     padding: 0.75rem var(--pad-x) 2rem;
     background: var(--white);
     border-top: 1px solid var(--line);
-    overflow-y: auto;
+    overflow-y: auto; overscroll-behavior: contain;
     gap: 0.125rem;
   }
 
@@ -1062,3 +1063,4 @@ button.btn-theme:active {
     background-color: #0B0711;
   }
 }
+body>header.site-header,.site-header{padding-block:10px;gap:20px}.brand-lockup{gap:10px}.site-header .brand-name{font-family:"Lato",system-ui,-apple-system,sans-serif;font-size:13px;font-weight:900;letter-spacing:0.02em;text-transform:uppercase;color:#0E0347}.nav-list{gap:28px}.site-header .nav-list a{font-family:"Roboto Variable",system-ui,-apple-system,sans-serif;font-size:15px;font-weight:500;color:#0E0347}.site-header .nav-list a[aria-current="page"]{font-weight:700}.site-header .btn-navy,.site-header #about-menu-btn.btn-navy{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;font-weight:700;text-transform:uppercase;padding:8px 16px;border-radius:16px;background-color:#A10000;color:#F7F6FF}.site-header button.btn-lang{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;font-weight:700;text-transform:uppercase;padding:8px 14px;border-radius:16px;color:#0E0347}:root[data-theme="dark"] .site-header .brand-name,:root[data-theme="dark"] .site-header .nav-list a{color:#FFFFFF}:root[data-theme="dark"] .site-header .btn-navy,:root[data-theme="dark"] .site-header #about-menu-btn.btn-navy,:root[data-theme="dark"] .site-header button.btn-lang{background-color:#150B52;color:#FFFFFF;border-color:rgba(196,192,212,0.28)}@media (max-width:767px){.site-header button.btn-lang{padding:7px 12px}.site-header .nav-list a{font-size:15.5px;font-weight:700;padding:9px 12px}}@media (prefers-reduced-motion:reduce){*,::before,::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
