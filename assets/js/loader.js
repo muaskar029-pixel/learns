@@ -21,8 +21,12 @@
 
   events.forEach(function (e) { addEventListener(e, load, { once: true, passive: true }); });
   document.addEventListener("click", function (e) {
-    var t = !window.__rdvReady && e.target.closest && e.target.closest("button:not([type=submit])");
-    if (t) { window.__rdvQ = t; load(); }
+    var t = !window.__rdvReady && e.target.closest && e.target.closest("button:not([type=submit]), [data-goto-tab]");
+    if (t) {
+      if (t.hasAttribute("data-goto-tab")) e.preventDefault();
+      window.__rdvQ = t;
+      load();
+    }
   }, true);
 
   try {

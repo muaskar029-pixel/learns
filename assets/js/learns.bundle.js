@@ -150,6 +150,17 @@ next.focus();
 activateTab(next.dataset.tab, true);
 });
 });
+document.addEventListener("click", function (e) {
+var trigger = e.target.closest && e.target.closest("[data-goto-tab]");
+if (!trigger) return;
+var key = trigger.getAttribute("data-goto-tab");
+if (key) {
+e.preventDefault();
+activateTab(key, true);
+var explorer = document.getElementById("catalog-explorer");
+if (explorer) explorer.scrollIntoView({ behavior: "smooth" });
+}
+});
 var hash = decodeURIComponent(window.location.hash.slice(1));
 if (!hash) return;
 if (tabs.some(function (tab) { return tab.dataset.tab === hash.toLowerCase(); })) {
