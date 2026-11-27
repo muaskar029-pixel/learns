@@ -15,7 +15,7 @@
     if (loaded) return;
     loaded = true;
     events.forEach(function (e) { removeEventListener(e, load); });
-    add("link", { rel: "stylesheet", href: new URL("../css/fonts.css", base).href });
+    // ponytail: fonts.css already loaded non-blocking in <head>
     add("script", { src: new URL("learns.bundle.js?v=2", base).href });
   }
 
