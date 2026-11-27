@@ -1,4 +1,4 @@
-// Loads css/fonts.css and js/learns.bundle.js on first interaction (or now if dark/hash needs it).
+// Loads css/fonts.css and js/learns.bundle.js?v=2 on first interaction (or now if dark/hash needs it).
 (function () {
   "use strict";
   var base = document.currentScript.src;
@@ -16,7 +16,7 @@
     loaded = true;
     events.forEach(function (e) { removeEventListener(e, load); });
     add("link", { rel: "stylesheet", href: new URL("../css/fonts.css", base).href });
-    add("script", { src: new URL("learns.bundle.js", base).href });
+    add("script", { src: new URL("learns.bundle.js?v=2", base).href });
   }
 
   events.forEach(function (e) { addEventListener(e, load, { once: true, passive: true }); });
